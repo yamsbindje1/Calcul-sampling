@@ -1,17 +1,10 @@
-
-# 
+#####################By Yams#####################
 # La formule de Morgan et Krejcie est utilisée pour déterminer la taille d'un échantillon à partir d'une population donnée. Elle est définie par la formule suivante :
-#   
-#   S = taille de l'échantillon
-
+# S = taille de l'échantillon
 #  x2= la valeur critique de chi-carré pour un niveau de confiance donné (généralement 1,96 pour un niveau de confiance de 95 %)
-
 # N = taille de la population
-
 # P = proportion estimée de la population (par défaut souvent 0,5, car c'est le cas le plus conservateur)
 # d = marge d'erreur acceptée (exprimée en proportion, par exemple 0,05 pour 5 %)
-
-
 # Fonction pour calculer la taille de l'échantillon avec la formule de Morgan et Krejcie
 taille_echantillon <- function(N, P = 0.5, d = 0.05, niveau_confiance = 0.95) {
   # Valeur critique du chi-carré pour le niveau de confiance (Z-score)
@@ -28,17 +21,9 @@ N <- 16826  # Taille de la population
 P <- 0.5    # Proportion estimée (par défaut 0.5)
 d <- 0.07   # Marge d'erreur (5 %)
 niveau_confiance <- 0.95  # Niveau de confiance (95 %)
-
 taille_echantillon(N, P, d, niveau_confiance)
 
-
-
 # la méthode de Leslie Kish qui ajuste la taille de l’échantillon pour les enquêtes en grappes à l’aide de la variance intercluster. Kish propose de prendre en compte la corrélation intraclasse ou la variance entre les grappes lorsqu’on échantillonne des groupes (grappes) au lieu d’individus. Cette méthode est utilisée pour ajuster la taille de l’échantillon en fonction du degré de similarité au sein des grappes.
-# 
-# Principe de l’ajustement par l’effet de grappe (intercluster)
-# L'effet de grappe est souvent exprimé par le Design Effect (DEFF), qui peut être calculé à partir de la corrélation intraclasse (
-# ρ) et de la taille moyenne des grappes (
-# Fonction pour calculer la taille ajustée en fonction de l'effet intercluster
 taille_echantillon_ajustee_kish <- function(N, P = 0.5, d = 0.05, niveau_confiance = 0.95, m = 10, rho = 0.02) {
   # Valeur critique du chi-carré pour le niveau de confiance (Z-score)
   Z <- qnorm(1 - (1 - niveau_confiance) / 2)
