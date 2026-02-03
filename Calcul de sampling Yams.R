@@ -1,4 +1,4 @@
-#####################By Yams#####################
+#####################By
 # La formule de Morgan et Krejcie est utilisée pour déterminer la taille d'un échantillon à partir d'une population donnée. Elle est définie par la formule suivante :
 # S = taille de l'échantillon
 #  x2= la valeur critique de chi-carré pour un niveau de confiance donné (généralement 1,96 pour un niveau de confiance de 95 %)
@@ -46,4 +46,5 @@ m <- 8      # Taille moyenne des grappes
 rho <- 0.06  # Corrélation intraclasse 
 
 taille_echantillon_ajustee_kish(N, P, d, niveau_confiance, m, rho)
+
 
